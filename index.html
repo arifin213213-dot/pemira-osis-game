@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Pemira OSIS & MPK - Inklusif & Keadilan Gender</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="game-container">
+        <!-- Header -->
+        <header>
+            <span class="badge">PEMIRA OSIS & MPK 2026</span>
+            <h1>Misi Inklusif: Suara Untuk Semua</h1>
+        </header>
+
+        <!-- Game Box -->
+        <main class="game-box">
+            <div id="story-text" class="story-box">
+                Selamat datang di simulasi kepemimpinan sekolah! Hari ini, kamu dihadapkan pada rapat penting penentuan ketua divisi acara. Kandidat laki-laki dan perempuan memiliki kemampuan setara, namun ada perdebatan mengenai siapa yang "lebih pantas" memimpin berdasarkan stereotip gender. Apa langkahmu?
+            </div>
+
+            <div id="choices-box" class="choices-box">
+                <button class="choice-btn" onclick="chooseOption(1)">Dukung Berdasarkan Kompetensi, Bukan Gender (Inklusif)</button>
+                <button class="choice-btn" onclick="chooseOption(2)">Ikuti Pendapat Mayoritas yang Menolak Kesetaraan</button>
+            </div>
+        </main>
+
+        <!-- Footer / Visi Paslon -->
+        <footer id="campaign-footer" class="hidden">
+            <div class="vision-card">
+                <h3>Solusi Bersama Paslon [Nama Paslon Kamu]</h3>
+                <p>Kami percaya bahwa kepemimpinan yang hebat tidak mengenal batas gender. Mari wujudkan OSIS & MPK yang adil, setara, dan ramah untuk seluruh siswa!</p>
+                <a href="#" class="vote-link">Coblos Nomor [X] di Pemira!</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function chooseOption(option) {
+            const storyText = document.getElementById("story-text");
+            const choicesBox = document.getElementById("choices-box");
+            const footer = document.getElementById("campaign-footer");
+
+            if (option === 1) {
+                storyText.innerHTML = "<strong>Pilihan Hebat!</strong> Kamu berhasil menegakkan keadilan dan membuktikan bahwa semua siswa punya hak kepemimpinan yang sama. Ketimpangan gender berhasil dikurangi di organisasimu!";
+            } else {
+                storyText.innerHTML = "<strong>Pelajaran Penting:</strong> Membiarkan bias gender terus berjalan justru membatasi potensi sekolah kita. Kepemimpinan yang adil adalah kunci kemajuan.";
+            }
+
+            choicesBox.style.display = "none";
+            footer.classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>
